@@ -16,6 +16,10 @@ settings:
 
 targets:
   MOSnote:
+    scheme:
+      testTargets:
+        - MOSnoteTests
+        - MOSnoteUITests
     type: application
     platform: iOS
     sources:
@@ -60,3 +64,16 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.beqd1106.mosnote.tests
         GENERATE_INFOPLIST_FILE: YES
+
+  MOSnoteUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - UITests
+    dependencies:
+      - target: MOSnote
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.beqd1106.mosnote.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: MOSnote

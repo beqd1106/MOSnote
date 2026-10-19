@@ -40,5 +40,6 @@ jobs:
             -project "MOSnote.xcodeproj" \
             -scheme "MOSnote" \
             -destination "platform=iOS Simulator,name=${DEVICE:-iPhone 16}" \
+            -skip-testing:MOSnoteUITests \
             CODE_SIGNING_ALLOWED=NO \
             test
